@@ -2,14 +2,12 @@
 // rafce: rearArrowFunctionExportComponent
 
 import React from "react";
+import NavBarItem from "./NavBarItem";
 
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          CORRALON APP
-        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -23,31 +21,11 @@ const NavBar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="#">
-                INICIO
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                CATÁLOGO
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                PRESUPUESTO
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                CONTACTO
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                LOGIN
-              </a>
-            </li>
+            <NavBarItem nombre="INICIO" url="#" />
+            <NavBarItem nombre="CATÁLOGO" url="#" />
+            <NavBarItem nombre="PRESUPUESTO" url="#" />
+            <NavBarItem nombre="CONTACTO" url="#" />
+            <NavBarItem nombre="LOGIN" url="#" />
           </ul>
         </div>
       </div>
