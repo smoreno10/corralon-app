@@ -1,10 +1,6 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-// rafce: rearArrowFunctionExportComponent
-
 import React from "react";
-import NavBarItem from "./NavBarItem";
 
-const NavBar = () => {
+const NavBar = ({children}) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -21,11 +17,7 @@ const NavBar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <NavBarItem nombre="INICIO" url="#" />
-            <NavBarItem nombre="CATÁLOGO" url="#" />
-            <NavBarItem nombre="PRESUPUESTO" url="#" />
-            <NavBarItem nombre="CONTACTO" url="#" />
-            <NavBarItem nombre="LOGIN" url="#" />
+            {children}
           </ul>
         </div>
       </div>
