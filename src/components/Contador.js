@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const Contador = () => {
+  
   const [count, setCount] = useState(0);
-
   return (
     <>
       <div class="btn-group" role="group" aria-label="Basic example">

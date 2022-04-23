@@ -1,10 +1,14 @@
 import React from "react";
+import ItemCard from "./ItemCard";
 
-const ItemListContainer = ({children}) => {
+const ItemListContainer = ({greeting}) => {
   return (
     <div className="container p-5">
+      <h1> {greeting} </h1>
       <div className="row row-cols-1 row-cols-md-3 g-4">
-        {children}
+        <ItemCard name="Art 1"/>
+        <ItemCard name="Art 2"/>
+        <ItemCard name="Art 3"/>   
       </div>
     </div>
   );
