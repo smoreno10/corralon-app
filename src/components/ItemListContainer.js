@@ -1,37 +1,37 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
+import { itemsData } from "../data/itemsData";
+import Wait from "./Wait";
+import { useParams } from "react-router-dom";
 
-const ItemListContainer = ({greeting}) => {
-
-  const itemsData = [
-    { id: 1, title: "Cemento", price: 900, imgUrl: 'https://cdn.pixabay.com/photo/2021/07/01/07/46/construction-6378558_960_720.jpg'}, 
-    { id: 2, title: "Hierro del 12", price: 2400, imgUrl: 'https://cdn.pixabay.com/photo/2014/10/05/08/11/iron-rods-474792_960_720.jpg'}, 
-    { id: 3, title: "Granza", price: 3000, imgUrl: 'https://cdn.pixabay.com/photo/2018/05/25/19/24/pebbles-3429815_960_720.jpg'}
-  ]
-
-  const[items, setItems] = useState([])    
+const ItemListContainer = ({ greeting }) => {
+  const { categoryId } = useParams();
+  const [items, setItems] = useState(undefined);
 
   useEffect(() => {
+    setItems(undefined)
     const promesa = new Promise((resolve, reject) => {
-    setTimeout(() => { 
-        resolve(itemsData) 
-      }, 2000)
-    })
+      setTimeout(() => {
+        resolve(categoryId ? itemsData.filter((i) => i.category == categoryId) : itemsData);
+      }, 2000);
+    });
 
     promesa
-    .then((result) => {
-      setItems(result)
-    })
-    .catch(err => {
-      console.log('Promesa rechazada', err)
-    })
-  }, [])
+      .then((result) => {
+        setItems(result);
+      })
+      .catch((err) => {
+        console.log("Promesa rechazada", err);
+      });
+  }, [categoryId]);
 
-  return (
+  return items ? (
     <div className="container p-5">
       <h1> {greeting} </h1>
-      <ItemList pItems={items}/>
+      <ItemList pItems={items} />
     </div>
+  ) : (
+    <Wait />
   );
 };
 

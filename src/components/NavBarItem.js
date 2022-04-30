@@ -1,12 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavBarItem = ({url, nombre}) => {
   return (
     <li className="nav-item">
-    <a className="nav-link" aria-current="page" href={url}>
-      {nombre}
-    </a>
-  </li>
+      <Link className='nav-link' to={url}>{nombre}</Link>
+    </li>
   )
 }
 
