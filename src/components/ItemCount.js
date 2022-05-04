@@ -21,8 +21,6 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 
   return (
     <>
-     {/* <div className="d-flex flex-column justify-content-center">
-       <div className="card-text"> */}
         <div role="group">
           <button
             type="button"
@@ -42,11 +40,9 @@ const ItemCount = ({ initial, stock, onAdd }) => {
             +
           </button>
         </div>
-      {/* </div> */}
       <a type="button" className="card-link" onClick={agregar()}>
         Agregar al carrito
       </a>
-     {/* </div> */}
     </>
   );
 };

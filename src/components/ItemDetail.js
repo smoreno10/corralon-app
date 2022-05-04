@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ pItem }) => {
+  const [count, setCount] = useState(0);
+  const onAdd = (quantiyToAdd) => setCount(quantiyToAdd);
+
   return (
     <div className="container mt-4">
       <div className="card mb-3">
@@ -22,6 +26,15 @@ const ItemDetail = ({ pItem }) => {
                 Características:
               </h6>
               <p className="card-text">{pItem.detail}</p>
+              {count == 0 ? (
+                <ItemCount
+                  initial={pItem.initial}
+                  stock={pItem.stock}
+                  onAdd={onAdd}
+                />
+              ) : (
+                <Link className="card-link" to="/Cart">Ver carrito</Link>
+              )}
             </div>
           </div>
         </div>
