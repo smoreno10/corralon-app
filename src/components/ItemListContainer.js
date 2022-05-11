@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import { itemsData } from "../data/itemsData";
 import Wait from "./Wait";
 import { useParams } from "react-router-dom";
+import { itemsData } from "../data/itemsData"
 
 const ItemListContainer = ({ greeting }) => {
   const { categoryId } = useParams();
-  const [items, setItems] = useState(undefined);
+  const [ items, setItems] = useState(undefined);
 
   useEffect(() => {
     setItems(undefined)

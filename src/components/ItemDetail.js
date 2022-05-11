@@ -31,9 +31,10 @@ const ItemDetail = ({ pItem }) => {
                   initial={pItem.initial}
                   stock={pItem.stock}
                   onAdd={onAdd}
+                  id={pItem.id}
                 />
               ) : (
-                <Link className="card-link" to="/Cart">Ver carrito</Link>
+                <Link className="card-link" to="/Cart">Ir al carrito</Link>
               )}
             </div>
           </div>
