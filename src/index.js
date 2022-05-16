@@ -6,6 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.js';
 
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDgZgzM8mPn3KUGwHmgVC3cxFAxSNoXBcI",
+  authDomain: "corralon-e756f.firebaseapp.com",
+  projectId: "corralon-e756f",
+  storageBucket: "corralon-e756f.appspot.com",
+  messagingSenderId: "359090585379",
+  appId: "1:359090585379:web:4df8e220f6c90d27c19696"
+};
+
+const app = initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <React.StrictMode>

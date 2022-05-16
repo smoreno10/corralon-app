@@ -2,27 +2,25 @@ import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import Wait from "./Wait";
 import { useParams } from "react-router-dom";
-import { itemsData } from "../data/itemsData"
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 const ItemListContainer = ({ greeting }) => {
   const { categoryId } = useParams();
-  const [ items, setItems] = useState(undefined);
+  const [items, setItems] = useState(undefined);
 
   useEffect(() => {
     setItems(undefined)
-    const promesa = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(categoryId ? itemsData.filter((i) => i.category == categoryId) : itemsData);
-      }, 2000);
-    });
-
-    promesa
-      .then((result) => {
-        setItems(result);
-      })
-      .catch((err) => {
-        console.log("Promesa rechazada", err);
-      });
+    const db = getFirestore()
+    const items = collection(db, 'itemsData') 
+    getDocs( items )
+    .then((res) => {
+      const ArrItems = res.docs.map((d) => ({ id: d.id, ...d.data() }))
+      if (categoryId) {
+        setItems(ArrItems.filter((i) => i.category == categoryId))
+      } else {
+        setItems(ArrItems)
+      }
+    })
   }, [categoryId]);
 
   return items ? (

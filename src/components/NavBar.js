@@ -10,7 +10,7 @@ const NavBar = () => {
       <div className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid pt-1 pe-4">
           <Link className="navbar-brand" to={"/"}>CORRALONLIFY</Link>
-          <CartWidget conteo="4" />
+          <CartWidget/>
         </div>
       </div>
 

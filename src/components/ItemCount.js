@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { useCartContext } from "../context/CartContext";
-import { itemsData } from "../data/itemsData"
 
 
-const ItemCount = ({ initial, stock, onAdd, id }) => {
+const ItemCount = ({ item, onAdd }) => {
   const { addToCart } = useCartContext()
-  const [count, setCount] = useState(stock > 0 ? initial : stock);
+  const [count, setCount] = useState( item.stock > 0 ? item.initial : item.stock);
   
-
   const decrement = () => {
     if (count > 0) {
       setCount(count - 1);
@@ -15,13 +13,13 @@ const ItemCount = ({ initial, stock, onAdd, id }) => {
   };
   
   const increment = () => {
-    if (count < stock) {
+    if (count < item.stock) {
       setCount(count + 1);
     }
   };
   const handleClick = () =>  {
-    if (stock > 0 && count > 0) {
-      addToCart(itemsData.find((i) => i.id == id), count);
+    if (item.stock > 0 && count > 0) {
+      addToCart(item, count);
       onAdd(count)
     }
   };

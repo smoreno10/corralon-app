@@ -1,14 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useCartContext } from "../context/CartContext";
 
-const CartWidget = ({ conteo }) => {
+const CartWidget = () => {
+  const { quantity } = useCartContext();
+  
+
   return (
     <>
-      <button type="button" className="btn btn-warning position-relative">
-        <i className="fa-solid fa-cart-shopping" />
-        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-          {conteo}
-        </span>
-      </button>
+      {quantity() > 0 ? (
+        <Link type="button" className="btn btn-warning position-relative" to="/Cart">
+          <i className="fa-solid fa-cart-shopping" />
+          <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {quantity()}
+          </span>
+        </Link>
+      ) : (
+        <></>
+      )}
     </>
   );
 };

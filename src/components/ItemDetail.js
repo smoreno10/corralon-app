@@ -28,13 +28,11 @@ const ItemDetail = ({ pItem }) => {
               <p className="card-text">{pItem.detail}</p>
               {count == 0 ? (
                 <ItemCount
-                  initial={pItem.initial}
-                  stock={pItem.stock}
+                  item={pItem}
                   onAdd={onAdd}
-                  id={pItem.id}
                 />
               ) : (
-                <Link className="card-link" to="/Cart">Ir al carrito</Link>
+                <Link className="card-link" to="/Cart">Terminar compra</Link>
               )}
             </div>
           </div>
