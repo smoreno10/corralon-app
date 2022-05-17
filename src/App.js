@@ -15,7 +15,7 @@ function App() {
             <Route
               path="/"
               element={
-                <ItemListContainer greeting="Bienvenides a CORRALONLIFY!" />
+                <ItemListContainer greeting="Bienvenides a Corralonlify!" />
               }
             ></Route>
             <Route

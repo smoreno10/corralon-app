@@ -9,7 +9,7 @@ const NavBar = () => {
     <>
       <nav className="navbar sticky-top navbar-expand-lg navbar-dark">
         <div className="container-fluid">
-        <Link className="navbar-brand" to={"/"}>CORRALONLIFY</Link>
+        <Link className="navbar-brand" to={"/"}>Corralonlify</Link>
           <button
             className="navbar-toggler"
             type="button"
