@@ -4,3 +4,12 @@
 * {
   font-family: 'Roboto Condensed', sans-serif;
 }
+
+body {
+  background-image: url("https://i.ibb.co/ZzNmZBK/hormigon.jpg");
+}
+
+nav {
+  background-color: rgb(33 37 41 / 70%) !important;
+}
+

@@ -7,15 +7,9 @@ import NavBarItem from "./NavBarItem";
 const NavBar = () => {
   return (
     <>
-      <div className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container-fluid pt-1 pe-4">
-          <Link className="navbar-brand" to={"/"}>CORRALONLIFY</Link>
-          <CartWidget/>
-        </div>
-      </div>
-
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar sticky-top navbar-expand-lg navbar-dark">
         <div className="container-fluid">
+        <Link className="navbar-brand" to={"/"}>CORRALONLIFY</Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -29,12 +23,10 @@ const NavBar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <NavBarItem nombre="INICIO" url="/" />
               <NavBarItem nombre="MATERIALES DE CONSTRUCCION" url="/Category/1" />
               <NavBarItem nombre="GRIFFERIA" url="/Category/2" />
-              <NavBarItem nombre="CONTACTO" url="#" />
-              <NavBarItem nombre="LOGIN" url="#" />
             </ul>
+            <CartWidget/>
           </div>
         </div>
       </nav>
