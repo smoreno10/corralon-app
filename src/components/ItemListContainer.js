@@ -9,24 +9,36 @@ const ItemListContainer = ({ greeting }) => {
   const [items, setItems] = useState(undefined);
 
   useEffect(() => {
-    setItems(undefined)
-    const db = getFirestore()
-    const items = collection(db, 'itemsData') 
-    getDocs( items )
-    .then((res) => {
-      const ArrItems = res.docs.map((d) => ({ id: d.id, ...d.data() }))
+    setItems(undefined);
+    const db = getFirestore();
+    const items = collection(db, "itemsData");
+    getDocs(items).then((res) => {
+      const ArrItems = res.docs.map((d) => ({ id: d.id, ...d.data() }));
       if (categoryId) {
-        setItems(ArrItems.filter((i) => i.category == categoryId))
+        setItems(ArrItems.filter((i) => i.category == categoryId));
       } else {
-        setItems(ArrItems)
+        setItems(ArrItems);
       }
-    })
+    });
   }, [categoryId]);
 
+  switch (categoryId) {
+    case "1":
+      greeting = "Materiales de construcción";
+      break;
+    case "2":
+      greeting = "Gifería";
+      break;
+    default:
+      break;
+  }
+
   return items ? (
-    <div className="container p-5">
-      <h1> {greeting} </h1>
-      <ItemList pItems={items} />
+    <div className="card container mt-4">
+      <div className="card-body">
+        <h5 className="card-title">{greeting}</h5>
+        <ItemList pItems={items} />
+      </div>
     </div>
   ) : (
     <Wait />

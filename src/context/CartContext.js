@@ -6,7 +6,9 @@ export const useCartContext = () => useContext(CartContext)
 const CartContextProvider = ({children}) => {
   const [cart, setCart] = useState([])
 
+  // Suma total de items para mostrar en el cartWidget.js
   const quantity = () => cart.reduce((sum, i) => { return sum + i.quantity }, 0)
+  
   const total = () => cart.reduce((sum, i) => { return sum + (i.quantity * i.price) }, 0)
   
   //Esta en el carro?
@@ -27,7 +29,6 @@ const CartContextProvider = ({children}) => {
 
     //Eliminar del carro
   const deleteFromCart = (producto) => {
-    debugger
     const newCart = [...cart]
     const productoIsInCart = isInCart(producto.id)
     if (!productoIsInCart) {

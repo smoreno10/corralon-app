@@ -27,12 +27,16 @@ const ItemDetail = ({ pItem }) => {
               </h6>
               <p className="card-text">{pItem.detail}</p>
               {count == 0 ? (
-                <ItemCount
-                  item={pItem}
-                  onAdd={onAdd}
-                />
+                <ItemCount item={pItem} onAdd={onAdd} />
               ) : (
-                <Link className="card-link" to="/Cart">Terminar compra</Link>
+                <>
+                  <Link className="card-link" to="/Cart">
+                    Ir al carrito
+                  </Link>
+                  <Link className="card-link" to="/">
+                    Seguir comprando
+                  </Link>
+                </>
               )}
             </div>
           </div>
