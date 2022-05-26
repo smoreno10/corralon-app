@@ -17,3 +17,11 @@ nav {
   font-family: 'Lobster', sans-serif;
 }
 
+.card {
+  border: none;
+  box-shadow: 1px 1px 5px #d5d5d5;
+}
+
+.card-container {
+  background-color: #ffffffba !important ;
+}

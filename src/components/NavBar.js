@@ -9,7 +9,7 @@ const NavBar = () => {
     <>
       <nav className="navbar sticky-top navbar-expand-lg navbar-dark">
         <div className="container-fluid">
-        <Link className="navbar-brand" to={"/"}>Corralonlify</Link>
+        <Link className="navbar-brand" to={"/"}>Corralónlify</Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -23,6 +23,7 @@ const NavBar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <NavBarItem nombre="HOME" url="/" />
               <NavBarItem nombre="MATERIALES DE CONSTRUCCION" url="/Category/1" />
               <NavBarItem nombre="GRIFFERIA" url="/Category/2" />
             </ul>

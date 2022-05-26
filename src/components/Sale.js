@@ -46,7 +46,6 @@ const Sale = () => {
 
     sale.items.forEach((item) => {
       const docRef = doc(db, 'itemsData', item.id)
-      console.log(docRef)
       updateDoc(docRef, {
         stock: increment(-item.quantity)
       })
@@ -61,7 +60,7 @@ const Sale = () => {
   return (
     <>
       {cart && cart.length > 0 ? (
-        <div className="card container mt-4">
+        <div className="card container mt-4" style={{maxWidth: "500px"}}>
           <div className="card-body">
             <h5 className="card-title">
               Ingrese los siguientes datos para confirmar la compra

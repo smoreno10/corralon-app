@@ -1,31 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 const Cart = () => {
   const { cart, total, deleteFromCart, deleteCart } = useCartContext();
 
-  // const compra = {
-  //   user: {nombre: "Santiago", telefono: "3513 956176"},
-  //   items: [
-  //     { id: 1, title: "Cemento"},
-  //     { id: 2, title: "Griffo"},
-  //     { id: 3, title: "Granza"}
-  //   ]
-  // }
-
-  // const saveCompra = async () => {
-  //   const db = getFirestore()
-  //   const compras = collection(db, 'compras')
-  //   const response = await addDoc(compras, compra)
-  //   console.log(response.id)
-  // }
-
   return (
     <>
       {cart && cart.length > 0 ? (
-        <div className="container mt-4 card">
+        <div className="container card-container mt-4 card">
           <div className="card-body d-flex flex-row align-items-center justify-content-between">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title">Total compra: ${total()}</h5>
@@ -50,6 +33,7 @@ const Cart = () => {
                       src={item.imgUrl}
                       className="img-fluid rounded-start"
                       style={{ width: "160px" }}
+                      alt="foto articulo"
                     />
                   </div>
                   <div className="col-md-10">
