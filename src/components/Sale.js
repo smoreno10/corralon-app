@@ -114,7 +114,7 @@ const Sale = () => {
                 <h5 className="card-title">Tu carrito esta vacio</h5>
               )}
             </>
-            <Link className="card-link" to="/">
+            <Link className="btn btn-outline-secondary m-2" to="/">
               Volver al inicio
             </Link>
           </div>

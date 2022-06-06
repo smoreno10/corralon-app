@@ -30,10 +30,10 @@ const ItemDetail = ({ pItem }) => {
                 <ItemCount item={pItem} onAdd={onAdd} />
               ) : (
                 <>
-                  <Link className="card-link" to="/Cart">
+                  <Link className="btn btn-outline-secondary m-2" to="/Cart">
                     Ir al carrito
                   </Link>
-                  <Link className="card-link" to="/">
+                  <Link className="btn btn-outline-secondary m-2" to="/">
                     Seguir comprando
                   </Link>
                 </>
